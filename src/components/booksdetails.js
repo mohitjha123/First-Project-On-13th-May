@@ -6,7 +6,7 @@ const Book = () =>{
     return <article className='book'>
       <img src="https://images-eu.ssl-images-amazon.com/images/I/91bYsX41DVL._AC_UL600_SR600,400_.jpg" alt="Atomic Habits" />
       <h2>{title}</h2>
-      <h4>{author.toUpperCase()}</h4>
+      <h3>{author.toUpperCase()}</h3>
     </article>
   }
 
