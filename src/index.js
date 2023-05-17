@@ -1,24 +1,57 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+const books =[
+  {
+    author: "James Clear",
+    title: "Atomic Habits: the life-changing million-copy #1 bestseller",
+    img: './img/1632735326.jpg',
+    id: 1,
+  },
+  {
+    author: "Anthony Doerr ",
+    title: "All The Light We Cannot see",
+    img: 'https://images.squarespace-cdn.com/content/v1/605b7322b806fb292a9defce/1617816625655-PUCD8T87L4YO2KZGMQPU/all-the-light-we-cannot-see_Anthony_Doerr.jpg',
+    id: 2,
+  },
+  {
+    author: "Akshat Gupta",
+    title: "The Hidden Hindu",
+    img: './img/hindu-newproject2.jpg',
+    id: 3,
+  },
 
-const img ='./img/91bYsX41DVL._AC_UL600_SR600,400_.jpg';
-const title = "Atomic Habits: the life-changing million-copy #1 bestseller";
-const author = "James Clear";
+];
 
+/*const firstBook = {
+  author: "James Clear",
+  title: "Atomic Habits: the life-changing million-copy #1 bestseller",
+  img: './img/1632735326.jpg',
+};
+const secBook = {
+  author: "Anthony Doerr ",
+  title: "All The Light We Cannot see",
+  img: 'https://images.squarespace-cdn.com/content/v1/605b7322b806fb292a9defce/1617816625655-PUCD8T87L4YO2KZGMQPU/all-the-light-we-cannot-see_Anthony_Doerr.jpg',
+};
+const thirdBook = {
+  author: "Akshat Gupta",
+  title: "The Hidden Hindu",
+  img: './img/hindu-newproject2.jpg',
+};*/
 const BookList = () => {
   return <section className='booklist'>
-    <Book author={author} title={title} img={img} />
-    <Book author={author} title={title} img={img} />
-    <Book author={author} title={title} img={img} />
+    {books.map((book) =>{
+      return <Book {...book} key={book.id} />;
+    })}
   </section>
 }
-const Book = (props) =>{
+const Book = (props) => {
+  const { img, title, author } = props;
   console.log(props)
   return <article className='book'>
-    <img src={props.img} alt={props.title} />
-    <h2>{props.title}</h2>
-    <h3>{props.author}</h3>
+    <img src={img} alt={title} />
+    <h2>{title}</h2>
+    <h3>{author}</h3>
   </article>
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
